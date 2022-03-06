@@ -6104,6 +6104,20 @@
       <field type="float" name="throttle_out" units="%">Output throttle</field>
       <field type="float" name="pt_compensation">Pressure/temperature compensation</field>
     </message>
+
+ <!--Custom messages by Yufei-->
+    <message id="227" name="AAA_OCEAN_LISTENER">
+      <description>Self defined variables</description>
+      <field type="uint16_t" name="air_conditioner">Air conditioner</field>
+      <field type="uint16_t" name="boat_speed">Boat speed</field>
+      <field type="uint64_t" name="time_usec" units="us">Timestamp (UNIX Epoch time or time since system boot). The receiving end can infer timestamp format (since 1.1.1970 or since system boot) by checking for the magnitude of the number.</field>
+    </message>
+    <message id="228" name="AAA_OFFBOARD_TO_FCU">
+      <description>Offboard to fcu.</description>
+      <field type="uint16_t" name="power_on">Power switch</field>
+   </message>
+
+
     <!-- MESSAGE IDs 180 - 229: Space for custom messages in individual projectname_messages.xml files -->
     <message id="230" name="ESTIMATOR_STATUS">
       <description>Estimator status message including flags, innovation test ratios and estimated accuracies. The flags message is an integer bitmask containing information on which EKF outputs are valid. See the ESTIMATOR_STATUS_FLAGS enum definition for further information. The innovation test ratios show the magnitude of the sensor innovation divided by the innovation check threshold. Under normal operation the innovation test ratios should be below 0.5 with occasional values up to 1.0. Values greater than 1.0 should be rare under normal operation and indicate that a measurement has been rejected by the filter. The user should be notified if an innovation test ratio greater than 1.0 is recorded. Notifications for values in the range between 0.5 and 1.0 should be optional and controllable by the user.</description>
